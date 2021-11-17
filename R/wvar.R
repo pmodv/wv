@@ -538,8 +538,8 @@ plot.wvar = function(x, units = NULL, xlab = NULL, ylab = NULL, main = NULL,
         legend(x = legend_position[1], y = legend_position[2],
                legend = c(as.expression(bquote(paste(.(wv_title_part1), hat(nu)^2))), 
                           as.expression(bquote(paste("CI(",hat(nu)^2,", ",.(CI_conf),")")))),
-               pch = c(16, 15), lty = c(1, NA), col = c(col_wv, col_ci), cex = 1, pt.cex = c(1.25, 3), bty = "n")
-      }else{
+               pch = c(16, 15), lty = c(1, NA), col = c(col_wv, col_ci), cex = 1, inset = inset=c(-0.2,0),pt.cex = c(1.25, 3), bty = "n")
+      }else{ # added negative inset for topright
         legend(legend_position,
                legend = c(as.expression(bquote(paste(.(wv_title_part1), hat(nu)^2))), 
                           as.expression(bquote(paste("CI(",hat(nu)^2,", ",.(CI_conf),")")))),
