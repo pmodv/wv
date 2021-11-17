@@ -534,6 +534,9 @@ plot.wvar = function(x, units = NULL, xlab = NULL, ylab = NULL, main = NULL,
              pch = c(16, 15), lty = c(1, NA), col = c(col_wv, col_ci), cex = 1, pt.cex = c(1.25, 3), bty = "n")
     }else{
       if (legend_position == "topright"){
+        # allow negative insets
+        par(xpd=TRUE)
+        
         legend_position = 10^c(0.7*win_dim[2], 0.98*(win_dim[4] - 0.09*(win_dim[4] - win_dim[3])))
         legend(x = legend_position[1], y = legend_position[2],
                legend = c(as.expression(bquote(paste(.(wv_title_part1), hat(nu)^2))), 
