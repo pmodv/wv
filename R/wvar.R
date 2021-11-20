@@ -1319,6 +1319,13 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
       mean_wv_1 = mean(inter)
       if (which.min(abs(c(y_low, y_high) - log2(mean_wv_1))) == 1){
         legend_position = "topleft"
+         # allow negative insets
+        par(xpd=TRUE)
+        
+        #legend_position = 10^c(0.7*win_dim[2], 0.98*(win_dim[4] - 0.09*(win_dim[4] - win_dim[3])))
+        legend(x = legend_position[1], y = legend_position[2],
+               
+               pch = c(16, 15), lty = c(1, NA), col = c(col_wv, col_ci), cex = 1, inset=c(-2,0),pt.cex = c(1.25, 3), bty = "n")
       }else{
         legend_position = "bottomleft"
       }
