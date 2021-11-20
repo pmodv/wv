@@ -1339,6 +1339,12 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
       }
     }
     
+     if (legend_position=="topright"){
+    print('line 1343')
+   #par('usr')[2] = max width / pay('usr')[4] = max height
+    legend(par('usr')[2], par('usr')[4], xpd=TRUE,bty='n' ,graph_details$names, bty = "n",
+           lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
+                      
     # Type of Points
     if (is.null(point_pch)){
       inter = rep(15:18, obj_len)
