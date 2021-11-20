@@ -239,7 +239,7 @@ wvar.default = function(x, decomp = "modwt", filter = "haar", nlevels = NULL, al
   }
   
   obj = modwt_wvar_cpp(signal=x, nlevels=nlevels, robust=robust, eff=eff, alpha=alpha, 
-              ci_type="eta3", strWavelet=filter, decomp = decomp)
+                       ci_type="eta3", strWavelet=filter, decomp = decomp)
   
   # nlevels may be changed during modwt
   nlevels = nrow(obj)
@@ -942,7 +942,7 @@ robust_eda = function(x, eff = 0.6, units = NULL, xlab = NULL, ylab = NULL, main
 compare_wvar_split = function(graph_details){
   
   old_pars = par(mfrow = c(graph_details$obj_len, graph_details$obj_len),
-             mar = c(0.5,0.5,0.5,1.5), oma = c(4,4,4,4))
+                 mar = c(0.5,0.5,0.5,1.5), oma = c(4,4,4,4))
   on.exit(par(old_pars))
   
   for (i in 1:graph_details$obj_len){
@@ -996,13 +996,13 @@ compare_wvar_split = function(graph_details){
         
         box()
         
-#        if (graph_details$add_legend){
-#          if (i == j){
-#            legend(graph_details$legend_position, graph_details$names, bty = "n",
-#                   lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
-#                   col = graph_details$col_wv, cex=0.7)
-#          }
-#        }
+        #        if (graph_details$add_legend){
+        #          if (i == j){
+        #            legend(graph_details$legend_position, graph_details$names, bty = "n",
+        #                   lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
+        #                   col = graph_details$col_wv, cex=0.7)
+        #          }
+        #        }
         
       }
       
@@ -1145,15 +1145,15 @@ compare_wvar_no_split = function(graph_details){
   
   if (graph_details$legend_position=="topright"){
     print('line 1147')
-   #par('usr')[2] = max width / pay('usr')[4] = max height
+    #par('usr')[2] = max width / pay('usr')[4] = max height
     legend(par('usr')[2], par('usr')[4], xpd=TRUE,graph_details$names, bty = "n",
            lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
   } else {
     print('line 1152')
-  legend(graph_details$legend_position, graph_details$names, bty = "n",
+    legend(graph_details$legend_position, graph_details$names, bty = "n",
            lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
            col = graph_details$col_wv)
-  
+    
   }
   
 }
@@ -1318,8 +1318,8 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
     y_at = 10^y_ticks
     
     # Legend position
-                      
-        
+    
+    
     if (is.null(legend_position)){
       inter = rep(NA, obj_len)
       for (i in 1:obj_len){
@@ -1328,24 +1328,24 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
       mean_wv_1 = mean(inter)
       if (which.min(abs(c(y_low, y_high) - log2(mean_wv_1))) == 1){
         legend_position = "topleft"
-         # allow negative insets
+        # allow negative insets
         par(xpd=TRUE)
         
         legend_position = 10^c(0.7*win_dim[2], 0.98*(win_dim[4] - 0.09*(win_dim[4] - win_dim[3])))
         legend(x = legend_position[1], y = legend_position[2],
                
-              inset=c(-5,0))
+               inset=c(-5,0))
       }else{
         legend_position = "bottomleft"
       }
     }
     
-     if (legend_position=="topright"){
-        print('line 1343')
-        #par('usr')[2] = max width / pay('usr')[4] = max height
-        legend(par('usr')[2], par('usr')[4], xpd=TRUE,bty='n' ,graph_details$names, bty = "n",
-           lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
-        }
+    if (legend_position=="topright"){
+      print('line 1343')
+      #par('usr')[2] = max width / pay('usr')[4] = max height
+      legend(par('usr')[2], par('usr')[4], xpd=TRUE,bty='n' ,graph_details$names, bty = "n",
+             lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
+    }
     # Type of Points
     if (is.null(point_pch)){
       inter = rep(15:18, obj_len)
@@ -1388,6 +1388,7 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
                          cex_labels = cex_labels)
     
     if (split == FALSE){
+      print('splitting on FALSE')
       # -> compare_wvar_no_split
       compare_wvar_no_split(graph_details)
     }else{
