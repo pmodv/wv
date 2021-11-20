@@ -1149,6 +1149,7 @@ compare_wvar_no_split = function(graph_details){
     legend(par('usr')[2], par('usr')[4], xpd=TRUE,graph_details$names, bty = "n",
            lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
   } else {
+    print('line 1152')
   legend(graph_details$legend_position, graph_details$names, bty = "n",
            lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
            col = graph_details$col_wv)
