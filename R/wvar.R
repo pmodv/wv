@@ -1145,7 +1145,7 @@ compare_wvar_no_split = function(graph_details){
   
   if (graph_details$legend_position=="topright"){
    #par('usr')[2] = max width / pay('usr')[4] = max height
-    legend(par('usr')[2], par('usr')[4], bty='n', xpd=NA,graph_details$names, bty = "n",
+    legend(par('usr')[2], par('usr')[4], bty='n', xpd=TRUE,graph_details$names, bty = "n",
            lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
   } else {
   legend(graph_details$legend_position, graph_details$names, bty = "n",
