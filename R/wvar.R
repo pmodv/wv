@@ -1318,7 +1318,8 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
         #legend_position = 10^c(0.7*win_dim[2], 0.98*(win_dim[4] - 0.09*(win_dim[4] - win_dim[3])))
         legend(x = legend_position[1], y = legend_position[2],
                
-              inset=c(-5,0))
+              
+               inset=c(25,0))
       }
                       
     if (is.null(legend_position)){
