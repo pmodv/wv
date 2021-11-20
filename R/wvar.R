@@ -1344,7 +1344,7 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
       print('line 1343')
       #par('usr')[2] = max width / pay('usr')[4] = max height
       legend(par('usr')[2], par('usr')[4], graph_details$names,xpd=TRUE, bty = "n",
-             lwd = 1, inset=c(10,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
+             lwd = 1, inset=c(-20,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
     }
     # Type of Points
     if (is.null(point_pch)){
