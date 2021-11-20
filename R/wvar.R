@@ -1143,12 +1143,15 @@ compare_wvar_no_split = function(graph_details){
           pch = graph_details$point_pch[i], cex = graph_details$point_cex[i])
   }
   
-  if (graph_details$add_legend){
-   par(xpd=TRUE)
-
-    legend(graph_details$legend_position, graph_details$names, bty = "n",
+  if (graph_details$add_legend=="topright"){
+   
+    legend(par('usr')[2], par('usr')[4], bty='n', xpd=NA,graph_details$legend_position, graph_details$names, bty = "n",
+           lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
+  } else {
+  legend(graph_details$legend_position, graph_details$names, bty = "n",
            lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
-           col = graph_details$col_wv,inset=c(-25,0))
+           col = graph_details$col_wv)
+  
   }
   
 }
