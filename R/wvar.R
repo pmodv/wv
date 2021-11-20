@@ -1147,7 +1147,7 @@ compare_wvar_no_split = function(graph_details){
     print('line 1147')
     #par('usr')[2] = max width / pay('usr')[4] = max height
     legend(par('usr')[2], par('usr')[4], xpd=TRUE,graph_details$names, bty = "n",
-           lwd = 1, inset=c(-2,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
+           lwd = 1, inset=c(20,0),pt.cex = graph_details$point_cex, pch = graph_details$point_pch, col = graph_details$col_wv)
   } else {
     print('line 1152')
     legend(graph_details$legend_position, graph_details$names, bty = "n",
@@ -1334,7 +1334,7 @@ compare_wvar = function(... , split = FALSE, add_legend = TRUE, units = NULL, xl
         legend_position = 10^c(0.7*win_dim[2], 0.98*(win_dim[4] - 0.09*(win_dim[4] - win_dim[3])))
         legend(x = legend_position[1], y = legend_position[2],
                
-               inset=c(-5,0))
+               inset=c(20,0))
       }else{
         legend_position = "bottomleft"
       }
