@@ -1148,7 +1148,7 @@ compare_wvar_no_split = function(graph_details){
 
     legend(graph_details$legend_position, graph_details$names, bty = "n",
            lwd = 1, pt.cex = graph_details$point_cex, pch = graph_details$point_pch,
-           col = graph_details$col_wv,inset=c(5,0))
+           col = graph_details$col_wv,inset=c(-25,0))
   }
   
 }
